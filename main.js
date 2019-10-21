@@ -43,17 +43,49 @@ What different attributes computers may have?
 Create two computers object from your factory function and save them in one array called computers!
 
 Note: please write one or two lines here describing your solution.
+
+I creates an array called computers it is an array of objects, and I used the each function to loop through the array of objects, 
+and to enter the objects into the array called computers, and in the displayComputer function to return the one object from the computers array.
+THEN 
+
 */
 
+
+
 function makeComputer(type, color, weight) {
-  // TODO: Your code here
-}
+
+	  var computers = [
+
+  {
+
+  	type: type,
+
+  	color: color,
+
+  	weight: weight
+
+  }];
+
+  each(computers, function(element, key) {
+
+  	computers[key] = element;
+
+  });
+
+  return computers;
+  
+  }
 
 // Write a function displayComputer that can be used to display one computer.
 
 function displayComputer(computer) {
-  // TODO: Your code here
+
+  return computer;
 }
+
+makeComputer(cop1 = {type:'HP', color:'black', weight:3});
+
+makeComputer(cop2 = {type:'dell', color:'blue', weight:2});
 
 //=============================================================================
 /*                                  Q2                                       */
@@ -68,13 +100,31 @@ Solve it using the most appropriate helper functions(each,map,filter).
 
 Note: please write one or two lines here describing your solution.
 
+I used the each function to loop through the arrayOfStrings and, 
+I used a anothor array to push the elements inside the new array after making them in the upper case form using the toUpperCase method.
+
 var strArr = ['hello', 'world', 'whirled', 'peas'];
 uppercaseAll(strArr); ==> [ 'HELLO', 'WORLD', 'WHIRLED', 'PEAS' ]
 */
 
 function uppercaseAll(arrayOfStrings) {
-  // TODO: your code here
+
+  var upper = [];
+
+  each(arrayOfStrings, function(element, i) {
+
+
+  	upper.push(element.toUpperCase());
+
+  });
+
+  return upper;
+
 }
+
+var strArr = ['hello', 'world', 'whirled', 'peas'];
+
+uppercaseAll(strArr);
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -88,6 +138,9 @@ Solve it using one of the most appropriate helperthe helpers functions(each,map,
 
 highestPopulation(data); ==> [{country: "China", population: 1409517397},{country: "India", population: 1339180127}]
 Note: please write one or two lines here describing your solution.
+
+I used the filter function to loop through the array, 
+and the objects inside the array to check for the condition and return the result. 
 
 Here’s the data you’ll work with:
 */
@@ -112,8 +165,17 @@ var data = [
 ];
 
 function highestPopulation(arrayOfObjects) {
-  // TODO: your code here
+
+  return filter(arrayOfObjects, function(element, i) {
+
+  	return element.population > 500000000;
+
+  });
+
 }
+
+
+highestPopulation(data);
 
 //=============================================================================
 /*                              Q4                                           */
@@ -129,11 +191,29 @@ var numsArray = [2, 6, 20, 8, 14];
 halveAll(numsArray); ==> [ 1, 3, 10, 4, 7 ]
 
 Note: please write one or two lines here describing your solution.
+
+I used the each function to loop through the numbers and, 
+I used a anothor array to push the elements inside the new array after dividing them by two.
+
 */
 
 function halveAll(numbers) {
-  // your code is here
+
+	var arr = [];
+
+  each(numbers, function(element, i) {
+
+    arr.push(element/2);
+
+  });
+
+  return arr;
+
 }
+
+var numsArray = [2, 6, 20, 8, 14];
+
+halveAll(numsArray);
 
 //=============================================================================
 /*                                  Q5                                       */
@@ -146,9 +226,20 @@ Solve it using one of the most appropriate helpers functions(each,map,filter).
 values({first : 5, second: 'something' , third : 129}) ==> [5, 'something', 129];
 
 Note: please write one or two lines here describing your solution.
+
+I used the map function to loop through the object and only return the elements.
+
 */
 function values(obj) {
-  // TODO: your code here
+  
+  return map(obj, function(element, key) {
+
+  	return element;
+
+  });
+
 }
+
+values({first : 5, second: 'something' , third : 129});
 
 //Good Luck :))
